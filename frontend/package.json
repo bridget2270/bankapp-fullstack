@@ -1,24 +1,28 @@
 {
-  "name": "montesbadbankapp",
+  "name": "mybadbankapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "bcryptjs": "^2.4.3",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "mongodb": "^6.1.0",
-    "mongoose": "^7.6.3",
+    "axios": "^1.5.1",
+    "bootstrap": "^3.4.1",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.8.0",
+    "react-bootstrap-validation": "^0.1.11",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
+    "react-hook-form": "^7.46.1",
+    "react-router-dom": "^6.16.0",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
+  "type": "module",
   "scripts": {
-    "start": "nodemon server",
-    "heroku-postbuild": "npm install --prefix frontend && npm run build --prefix frontend"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
