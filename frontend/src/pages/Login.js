@@ -21,7 +21,9 @@ export default function Login() {
     setStatus("");
     if (!validate(email, "email")) return;
     if (!validate(password, "password")) return;
-    await login(email, password);
+    const err = await login(email, password);
+    if (err) return setStatus(err);
+    clearForm();
   }
   function clearForm() {
     setEmail("");

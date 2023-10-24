@@ -15,6 +15,10 @@ export default function CreateAccount() {
       setTimeout(() => setStatus(""), 3000);
       return false;
     }
+    if (label === "email" && !isValidEmail(field)) {
+      setStatus("Enter a valid email!");
+      return false;
+    }
     if (label === "password" && password.length < 8) {
       setStatus("Password should be 8 characters or more");
       return false;
@@ -27,13 +31,21 @@ export default function CreateAccount() {
     if (!validate(name, "name")) return;
     if (!validate(email, "email")) return;
     if (!validate(password, "password")) return;
-    await register(name, email, password);
+    const err = await register(name, email, password);
+    if (err) setStatus(err);
   }
   function clearForm() {
     setName("");
     setEmail("");
     setPassword("");
     logout();
+  }
+  function isValidEmail(email) {
+    // Regular expression for basic email validation
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+    // Use the test() method to check if the email matches the regex
+    return emailRegex.test(email);
   }
 
   return (
