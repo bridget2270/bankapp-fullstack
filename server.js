@@ -11,7 +11,7 @@ dotenv.config();
 // connect to the databse
 connectDB();
 
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 const app = express();
 
 // allow us pass json data through the body
