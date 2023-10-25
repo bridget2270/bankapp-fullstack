@@ -2,7 +2,11 @@ import { useState, createContext, useEffect } from "react";
 import axios from "axios";
 
 const UserContext = createContext();
-const baseUrl = "http://localhost:5001/api/users";
+
+const baseURL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:5001/api/users"
+    : "https://your-heroku-app.herokuapp.com/api/users";
 
 const UserContextProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
