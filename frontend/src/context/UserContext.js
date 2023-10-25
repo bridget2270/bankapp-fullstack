@@ -14,6 +14,8 @@ const UserContextProvider = ({ children }) => {
   const [showRegisterMsg, setShowRegisterMsg] = useState(false);
   const [showLoginMsg, setShowLoginMsg] = useState(false);
 
+  console.log("BaseUrl: ", baseUrl);
+
   useEffect(() => {
     getStoredUser();
   }, []);
