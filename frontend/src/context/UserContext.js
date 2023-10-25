@@ -3,10 +3,10 @@ import axios from "axios";
 
 const UserContext = createContext();
 
-const baseURL =
+const baseUrl =
   window.location.hostname === "localhost"
     ? "http://localhost:5001/api/users"
-    : "https://your-heroku-app.herokuapp.com/api/users";
+    : window.location.host + "/api/users";
 
 const UserContextProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
